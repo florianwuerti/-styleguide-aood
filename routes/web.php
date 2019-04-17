@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('start');
-});
+Route::get('/', 'HomeController@start')->name('start');
+
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::name( 'template.' )->group( function () {
+
+	Route::middleware( 'auth' )->group( function () {
+
+		Route::get('/template', 'HomeController@index')->name('template');
+
+	} );
+
+} );
+
