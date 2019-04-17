@@ -1,0 +1,14 @@
+// Flexbox
+@mixin flexbox {
+  display: flex;
+}
+
+// Flexbox Direction
+@mixin flex-direction($value: row) {
+  flex-direction: $value;
+}
+
+// Transition
+@mixin transition($property: all, $duration: .5s, $ease: linear){
+  transition: $property $duration $ease;
+}

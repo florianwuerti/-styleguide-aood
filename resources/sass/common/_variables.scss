@@ -1,0 +1,34 @@
+// Default
+$font__size--default: 100%;
+
+// ### Colors ###
+
+// #### Brand ####
+$brandColor__primary: #002a3a;
+$brandColor__secondary: #00677f;
+
+
+// #### Typography ####
+$color__white: #ffffff;
+$color__black: #101820;
+$color__gray: #353842;
+
+$color__text: $color__black;
+$color__lighter-white: lighten($color__text, 70%);
+
+
+// #### Links ####
+
+
+// ### Typography ###
+$font__family--main: 'Frutiger';
+$font__main: $font__family--main, sans-serif;
+
+// #### Font Weight ####
+$font__weight--light: 300;
+$font__weight--normal: 400;
+$font__weight--bold: 700;
+
+
+// #### Line Height ####
+$font__line-height: 1.5;

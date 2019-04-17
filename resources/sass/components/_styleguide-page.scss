@@ -1,0 +1,126 @@
+//
+// Base styles
+//
+
+body {
+  font-family: $font__main;
+}
+
+header {
+  background-color: $brandColor__primary;
+  min-height: 380px;
+  color: $color__white;
+  @include flexbox;
+  @include flex-direction(column);
+  position: relative;
+
+  .navbar {
+    @include flexbox;
+    @include flex-direction(column);
+    padding: 0.9375em 3.125em 0 3.125em;
+    align-items: center;
+
+    @media screen and (min-width: 588px) {
+      @include flex-direction(row);
+      flex-wrap: wrap;
+    }
+
+    .branding {
+
+      @media screen and (min-width: 522px) and (max-width: 588px) {
+        display: flex;
+        flex: 1 0 auto;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .branding__logo {
+        width: auto;
+        height: 40px;
+      }
+
+    }
+
+  }
+
+  .navbar__nav {
+    @include flexbox;
+    flex: 1 0 auto;
+    max-width: 100%;
+    z-index: 10;
+
+    @media screen and (min-width: 588px) {
+      margin-left: 6.25em;
+    }
+
+    ul.navbar__list {
+      list-style: none;
+      @include flexbox;
+      padding: 0;
+
+      li.navbar__list--item {
+        margin-right: 0.9375em;
+        font-weight: $font__weight--bold;
+
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.state-active {
+          border-bottom: 2px solid;
+          border-color: rgb(255, 255, 255);
+        }
+
+        a.navbar__list--itemLink {
+          color: rgba(255, 255, 255, 0.8);
+          text-decoration: none;
+
+          &.state-active {
+            color: rgb(255, 255, 255);
+          }
+
+          &:hover, &:active {
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// Header Hero Background
+.header-hero {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  @include flexbox;
+  flex: 1 0 auto;
+  width: 100vw;
+  height: 80%;
+  padding-top: 4.6875em;
+  color: $color__white;
+  @include flex-direction(column);
+  left: 0;
+
+  .header-hero__heading {
+    font-size: 300%;
+    font-weight: $font__weight--bold;
+    margin: 0;
+    text-align: center;
+  }
+
+  .header-hero__subheading {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: $font__weight--normal;
+    font-size: 125%;
+  }
+}
+
+main {
+  margin: 2.1875em;
+}
