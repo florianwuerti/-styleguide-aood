@@ -376,8 +376,34 @@ template {
   display: none;
 }
 
+h2 {
+  margin: 0;
+}
+
 body {
   font-family: "Frutiger", sans-serif;
+  box-sizing: border-box;
+  background-color: #F5F6F9;
+}
+
+.backend header {
+  background-color: #353842;
+  min-height: inherit;
+  color: #ffffff;
+  display: flex;
+}
+
+.backend header .navbar {
+  display: flex;
+  margin: 0 3.125rem;
+  padding: 0.625rem 0;
+  justify-content: space-between;
+  flex: 1 0 auto;
+}
+
+.backend header .navbar .branding .branding__logo {
+  width: auto;
+  height: 40px;
 }
 
 header {
@@ -389,11 +415,19 @@ header {
   position: relative;
 }
 
+header.has__thumbnail {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: dimgray;
+}
+
 header .navbar {
   display: flex;
   flex-direction: column;
   padding: 0.9375em 3.125em 0 3.125em;
   align-items: center;
+  z-index: 1;
 }
 
 @media screen and (min-width: 588px) {
@@ -421,7 +455,7 @@ header .navbar__nav {
   display: flex;
   flex: 1 0 auto;
   max-width: 100%;
-  z-index: 10;
+  z-index: 1;
 }
 
 @media screen and (min-width: 588px) {
@@ -445,18 +479,18 @@ header .navbar__nav ul.navbar__list li.navbar__list--item:last-child {
   margin-right: 0;
 }
 
-header .navbar__nav ul.navbar__list li.navbar__list--item.state-active {
+header .navbar__nav ul.navbar__list li.navbar__list--item.navbar__list--item-active {
   border-bottom: 2px solid;
   border-color: white;
+}
+
+header .navbar__nav ul.navbar__list li.navbar__list--item.navbar__list--item-active a.navbar__list--itemLink {
+  color: white;
 }
 
 header .navbar__nav ul.navbar__list li.navbar__list--item a.navbar__list--itemLink {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-}
-
-header .navbar__nav ul.navbar__list li.navbar__list--item a.navbar__list--itemLink.state-active {
-  color: white;
 }
 
 header .navbar__nav ul.navbar__list li.navbar__list--item a.navbar__list--itemLink:hover,
@@ -491,7 +525,188 @@ header .navbar__nav ul.navbar__list li.navbar__list--item a.navbar__list--itemLi
   font-size: 125%;
 }
 
+.header-hero .signup {
+  background-color: #ffffff;
+  background-size: 184px 405px;
+  padding: 2.8125rem;
+  position: relative;
+  width: 400px;
+}
+
+.header-hero .signup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.skinLayoutAuth header {
+  height: 100vh;
+}
+
 main {
   margin: 2.1875em;
+}
+
+.co-powerbar__login {
+  outline: 0;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: block;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 2px;
+  color: #ffffff;
+  z-index: 2;
+  transition: background 0.2s ease-in-out;
+}
+
+label {
+  color: #101820;
+}
+
+input {
+  display: inline-flex;
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #DDD;
+  opacity: 1;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 300ms ease-out, opacity 300ms linear;
+  padding: 14px 24px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btn {
+  padding: 15px;
+  border: none;
+  background-color: lightgray;
+  box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.btn:focus,
+.btn:hover,
+.btn:active {
+  outline: none;
+  background-color: darkgray;
+}
+
+.btn.btn--primary {
+  color: #ffffff;
+  background-color: #49505c;
+  border-color: #49505c;
+  padding-left: 20px;
+  padding-right: 25px;
+}
+
+.brands__projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.brands__projects .brand__project {
+  flex: 1 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .brands__projects .brand__project {
+    flex: 1 0 25%;
+    max-width: 25%;
+  }
+}
+
+.brands__projects .brand__project:nth-child(even) {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.brands__projects .brand__project .brand__project--link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #101820;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-out;
+}
+
+.brands__projects .brand__project .brand__project--link:hover {
+  box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.brands__projects .brand__project .brand__project--link .brand__project--banner {
+  background-color: #00677f;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  padding: 20px;
+  height: 120px;
+  position: relative;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+  background-position: 50% 50%;
+}
+
+.brands__projects .brand__project .brand__project--link .brand__project--banner .brand__project--images-wrapper {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  -webkit-transform: translateX(-44px);
+          transform: translateX(-44px);
+  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  z-index: 1;
+  background: #FFF;
+  padding: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.brands__projects .brand__project .brand__project--link .brand__project--banner .brand__project--images-wrapper .brand__project--images {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.brands__projects .brand__project .brand__project--link .brand__project--content {
+  padding: 3.75rem 0.9375rem 0.9375rem 0.9375rem;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.brands__projects .brand__project .brand__project--footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px 60px;
+  border-top: 1px solid rgba(54, 61, 74, 0.05);
+}
+
+.brands__projects .brand__project .brand__project--footer a.brand__project--footer-link {
+  color: #717780;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.brands__projects .brand__project .brand__project--footer a.brand__project--footer-link:hover,
+.brands__projects .brand__project .brand__project--footer a.brand__project--footer-link:focus {
+  color: #363D4A;
+}
+
+.brands__projects .brand__project .brand__project--footer a.brand__project--footer-link.state__disabled {
+  opacity: 0.5;
+  font-weight: 400;
 }
 

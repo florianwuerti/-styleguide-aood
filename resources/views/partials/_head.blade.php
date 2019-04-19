@@ -7,9 +7,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') - {{ config('app.name')}}</title>
+    <title>@yield('page_title', '') - @yield('site_title', 'Dein Branding')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+
+@if (Request::is('login'))
+    <body class="@yield('page_class', '') skinLayoutAuth">
+    @else
+        <body class="@yield('page_class', '')">
+@endif

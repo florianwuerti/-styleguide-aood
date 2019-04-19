@@ -1,3 +1,8 @@
+//Functions
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
 // Flexbox
 @mixin flexbox {
   display: flex;
@@ -11,4 +16,10 @@
 // Transition
 @mixin transition($property: all, $duration: .5s, $ease: linear){
   transition: $property $duration $ease;
+}
+
+// Font size
+@mixin font-size($sizeValue:unit($font__size--default)) {
+  $remSize: ($sizeValue / strip-unit($font__size--default));
+  font-size: $remSize + rem;
 }

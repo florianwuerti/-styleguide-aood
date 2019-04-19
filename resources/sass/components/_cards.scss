@@ -1,0 +1,110 @@
+//
+// Base styles
+//
+
+// Branding Project Cards
+
+.brands__projects {
+  @include flexbox;
+  @include flex-direction(row);
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .brand__project {
+    flex: 1 0 100%;
+    max-width: 100%;
+
+    @media (min-width: 1280px) {
+      flex: 1 0 25%;
+      max-width: 25%;
+    }
+
+    &:nth-child(even) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .brand__project--link {
+      @include flexbox;
+      @include flex-direction(column);
+      text-decoration: none;
+      color: $color__text;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1);
+      transition: box-shadow .3s ease-out;
+
+      &:hover {
+        box-shadow: 0 1px 30px 0 rgba(0, 0, 0, .2);
+      }
+
+      .brand__project--banner {
+        background-color: $brandColor__secondary;
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-width: 100%;
+        padding: 20px;
+        height: 120px;
+        position: relative;
+        box-shadow: inset 0 0 1px rgba(0, 0, 0, .2);
+        background-position: 50% 50%;
+
+
+        .brand__project--images-wrapper {
+          position: absolute;
+          bottom: -40px;
+          left: 50%;
+          transform: translateX(-44px);
+          border-radius: 50%;
+          width: 88px;
+          height: 88px;
+          z-index: 1;
+          background: #FFF;
+          padding: 3px;
+          box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+
+          .brand__project--images {
+            border-radius: 50%;
+            max-width: 100%;
+          }
+        }
+      }
+
+      .brand__project--content {
+        padding: 3.75rem 0.9375rem 0.9375rem 0.9375rem;
+        @include flexbox;
+        justify-content: center;
+        background-color: $color__white;
+
+        h2 {
+
+        }
+
+      }
+
+    }
+
+    .brand__project--footer {
+      @include flexbox;
+      justify-content: space-between;
+      background-color: $color__white;
+      padding: 20px 60px;
+      border-top: 1px solid rgba(54, 61, 74, .05);
+
+      a.brand__project--footer-link {
+        color: #717780;
+        text-decoration: none;
+        transition: color .2s ease-in-out;
+        @include font-size(14);
+        font-weight: $font__weight--bold;
+
+        &:hover, &:focus {
+          color: #363D4A;
+        }
+
+        &.state__disabled {
+          opacity: .5;
+          font-weight: $font__weight--normal;
+        }
+      }
+    }
+  }
+}

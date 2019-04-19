@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@start')->name('start');
+Route::get( '/', 'HomeController@index' )->name( 'start' );
 
-
+Route::get( 'logout', 'Auth\LoginController@logout' )->middleware( 'auth' );
 
 Auth::routes();
 
@@ -21,9 +21,21 @@ Route::name( 'template.' )->group( function () {
 
 	Route::middleware( 'auth' )->group( function () {
 
-		Route::get('/template', 'HomeController@index')->name('template');
+		Route::get( '{id}/dashboard', 'AdminDashboardController@index' )->name( 'user.backend' );
+
+		Route::get( '/template', 'HomeController@index' )->name( 'template' );
 
 	} );
 
 } );
 
+Route::name( 'brand.' )->group( function () {
+
+	Route::middleware( 'auth' )->group( function () {
+
+		Route::get( 'brand/348927/brandingname/guidelines', 'GuidelinesController@index' )->name( 'guidelines' );
+		Route::get( 'brand/348927/brandingname/projects', 'ProjectsController@index' )->name( 'projects' );
+
+	} );
+
+} );

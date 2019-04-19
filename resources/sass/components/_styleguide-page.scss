@@ -2,87 +2,136 @@
 // Base styles
 //
 
+
+// Headline
+
+h2 {
+  margin: 0;
+}
+
 body {
   font-family: $font__main;
+  box-sizing: border-box;
+  background-color: $color__background;
 }
 
-header {
-  background-color: $brandColor__primary;
-  min-height: 380px;
-  color: $color__white;
-  @include flexbox;
-  @include flex-direction(column);
-  position: relative;
+.backend {
 
-  .navbar {
+  header {
+    background-color: $color__gray;
+    min-height: inherit;
+    color: $color__white;
+    @include flexbox;
+
+    .navbar {
+      @include flexbox;
+      margin: 0 3.125rem;
+      padding: 0.625rem 0;
+      justify-content: space-between;
+      flex: 1 0 auto;
+
+      .branding {
+
+        .branding__logo {
+          width: auto;
+          height: 40px;
+        }
+
+      }
+
+    }
+
+  }
+}
+
+//body:not(.backend) {
+  header {
+    background-color: $brandColor__primary;
+    min-height: 380px;
+    color: $color__white;
     @include flexbox;
     @include flex-direction(column);
-    padding: 0.9375em 3.125em 0 3.125em;
-    align-items: center;
+    position: relative;
 
-    @media screen and (min-width: 588px) {
-      @include flex-direction(row);
-      flex-wrap: wrap;
+    &.has__thumbnail {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: dimgray;
     }
 
-    .branding {
-
-      @media screen and (min-width: 522px) and (max-width: 588px) {
-        display: flex;
-        flex: 1 0 auto;
-        width: 100%;
-        justify-content: center;
-      }
-
-      .branding__logo {
-        width: auto;
-        height: 40px;
-      }
-
-    }
-
-  }
-
-  .navbar__nav {
-    @include flexbox;
-    flex: 1 0 auto;
-    max-width: 100%;
-    z-index: 10;
-
-    @media screen and (min-width: 588px) {
-      margin-left: 6.25em;
-    }
-
-    ul.navbar__list {
-      list-style: none;
+    .navbar {
       @include flexbox;
-      padding: 0;
+      @include flex-direction(column);
+      padding: 0.9375em 3.125em 0 3.125em;
+      align-items: center;
+      z-index: 1;
 
-      li.navbar__list--item {
-        margin-right: 0.9375em;
-        font-weight: $font__weight--bold;
+      @media screen and (min-width: 588px) {
+        @include flex-direction(row);
+        flex-wrap: wrap;
+      }
 
+      .branding {
 
-        &:last-child {
-          margin-right: 0;
+        @media screen and (min-width: 522px) and (max-width: 588px) {
+          display: flex;
+          flex: 1 0 auto;
+          width: 100%;
+          justify-content: center;
         }
 
-        &.state-active {
-          border-bottom: 2px solid;
-          border-color: rgb(255, 255, 255);
+        .branding__logo {
+          width: auto;
+          height: 40px;
         }
 
-        a.navbar__list--itemLink {
-          color: rgba(255, 255, 255, 0.8);
-          text-decoration: none;
+      }
 
-          &.state-active {
-            color: rgb(255, 255, 255);
+    }
+
+    .navbar__nav {
+      @include flexbox;
+      flex: 1 0 auto;
+      max-width: 100%;
+      z-index: 1;
+
+      @media screen and (min-width: 588px) {
+        margin-left: 6.25em;
+      }
+
+      ul.navbar__list {
+        list-style: none;
+        @include flexbox;
+        padding: 0;
+
+        li.navbar__list--item {
+          margin-right: 0.9375em;
+          font-weight: $font__weight--bold;
+
+
+          &:last-child {
+            margin-right: 0;
           }
 
-          &:hover, &:active {
-            color: rgba(255, 255, 255, 1);
+          &.navbar__list--item-active {
+            border-bottom: 2px solid;
+            border-color: rgb(255, 255, 255);
+
+            a.navbar__list--itemLink {
+              color: rgb(255, 255, 255);
+            }
           }
+
+          a.navbar__list--itemLink {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+
+            &:hover, &:active {
+              color: rgba(255, 255, 255, 1);
+            }
+          }
+
         }
 
       }
@@ -91,7 +140,7 @@ header {
 
   }
 
-}
+//}
 
 // Header Hero Background
 .header-hero {
@@ -119,8 +168,88 @@ header {
     font-weight: $font__weight--normal;
     font-size: 125%;
   }
+
+  .signup {
+    background-color: $color__white;
+    background-size: 184px 405px;
+    padding: 2.8125rem;
+    position: relative;
+    width: 400px;
+
+    form {
+      @include flexbox;
+      @include flex-direction(column);
+    }
+  }
+}
+
+.skinLayoutAuth {
+  header {
+    height: 100vh;
+  }
 }
 
 main {
   margin: 2.1875em;
+}
+
+.co-powerbar__login {
+  outline: 0;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: block;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 2px;
+  color: $color__white;
+  z-index: 2;
+  transition: background .2s ease-in-out;
+}
+
+label {
+  color: $color__text;
+}
+
+input {
+  display: inline-flex;
+  background-color: $color__white;
+  color: #444;
+  border: 1px solid #DDD;
+  opacity: 1;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, .05);
+  transition: box-shadow 300ms ease-out, opacity 300ms linear;
+  padding: 14px 24px;
+  font-size: 16px;
+  margin-bottom: 15px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  padding: 15px;
+  border: none;
+  background-color: lightgray;
+  box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+
+
+  &:focus, &:hover, &:active {
+    outline: none;
+    background-color: darkgray;
+  }
+
+  &.btn--primary {
+    color: $color__white;
+    background-color: rgba(73, 80, 92, 1);
+    border-color: rgba(73, 80, 92, 1);
+    padding-left: 20px;
+    padding-right: 25px;
+  }
 }

@@ -1,5 +1,5 @@
 // Default
-$font__size--default: 100%;
+$font__size--default: 16px;
 
 // ### Colors ###
 
@@ -15,7 +15,7 @@ $color__gray: #353842;
 
 $color__text: $color__black;
 $color__lighter-white: lighten($color__text, 70%);
-
+$color__background: #F5F6F9;
 
 // #### Links ####
 
