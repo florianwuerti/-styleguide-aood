@@ -1,9 +1,9 @@
+@section('page_title', 'Projekt')
 @extends('layouts.backend')
 
 @section('content')
-    <div class="container">
-        <div class="justify-content-center">
-            <h1>Projects</h1>
-        </div>
-    </div>
+    <h2>Projekt</h2>
+
+    @include('backend.partials._empty')
+
 @endsection

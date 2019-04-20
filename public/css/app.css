@@ -406,6 +406,15 @@ body {
   height: 40px;
 }
 
+.backend .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
 header {
   background-color: #002a3a;
   min-height: 380px;
@@ -587,10 +596,11 @@ input:focus {
 
 .btn {
   padding: 15px;
-  border: none;
   background-color: lightgray;
   box-shadow: -1px 1px 4px 0px rgba(0, 0, 0, 0.2);
   text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 20px;
 }
 
 .btn:focus,
@@ -606,6 +616,50 @@ input:focus {
   border-color: #49505c;
   padding-left: 20px;
   padding-right: 25px;
+}
+
+.blankslate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  flex: 1 0 30%;
+  margin: 0 auto;
+}
+
+.blankslate .blankslate__images {
+  width: 323px;
+}
+
+.blankslate .blankslate__images img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blankslate .blankslate__text {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert.alert__primary {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.alert.alert__danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
 }
 
 .brands__projects {

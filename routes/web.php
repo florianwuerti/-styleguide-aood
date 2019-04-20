@@ -21,7 +21,7 @@ Route::name( 'template.' )->group( function () {
 
 	Route::middleware( 'auth' )->group( function () {
 
-		Route::get( '{id}/dashboard', 'AdminDashboardController@index' )->name( 'user.backend' );
+		Route::get( '{id}/dashboard', 'BrandController@index' )->name( 'user.backend' );
 
 		Route::get( '/template', 'HomeController@index' )->name( 'template' );
 

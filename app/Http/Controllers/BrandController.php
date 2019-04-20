@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller {
@@ -19,8 +20,10 @@ class BrandController extends Controller {
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function index() {
-		//
+	public function index( Brand $brands ) {
+
+		return view( 'backend.pages.dashboard', compact( 'brands' ) );
+
 	}
 
 	/**
