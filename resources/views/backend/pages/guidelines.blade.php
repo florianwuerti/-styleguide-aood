@@ -1,9 +1,7 @@
+@section('page_title', 'Agentur OnOff Design KLG')
+
 @extends('layouts.backend')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <h1>Guidelines</h1>
-        </div>
-    </div>
+    <h1>Guidelines</h1>
 @endsection

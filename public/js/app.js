@@ -49427,8 +49427,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/wuerti.design/Documents/Development/www/styleguide-aood/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/wuerti.design/Documents/Development/www/styleguide-aood/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/wuerti.design/Documents/Webserver/www/your-brand/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/wuerti.design/Documents/Webserver/www/your-brand/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

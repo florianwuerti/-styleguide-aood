@@ -92,4 +92,18 @@ class AdminDashboardController extends Controller {
 	public function destroy( $id ) {
 		//
 	}
+
+	public static function isEmptyPage( $images, $title, $text, $is_available, $btn__title ) {
+
+		$data = [
+			'images'       => $images,
+			'title'        => $title,
+			'text'         => $text,
+			'subtitle'     => 'Marke',
+			'is_available' => $is_available,
+			'btn_title'    => $btn__title
+		];
+
+		return view( 'backend.partials._empty', compact( 'data' ) );
+	}
 }

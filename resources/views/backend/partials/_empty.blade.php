@@ -1,13 +1,13 @@
 <div class="blankslate">
     <div class="blankslate__images">
-        <img src="https://company-161686.frontify.com/img/blankslate/project/drop.png" alt="">
+        <img src="{{$data['images']}}" alt="">
     </div>
-    <h1 class="blankslate__headline--h1">Beginnen wir mit etwas Neuem.</h1>
-    <p class="blankslate__text">Projekte ermöglichen es dir, Markeninhalte zu diskutieren und zu iterieren,
-        dynamische Prototypen zu
-        erstellen und Workflows anzupassen.</p>
+    <h1 class="blankslate__headline--h1">{{$data['title']}}</h1>
+    <p class="blankslate__text">{{$data['text']}}</p>
 
-    <div class="alert alert__danger">Zur Zeit nicht vefügbar.</div>
+    @if($data['is_available'])
+        <div class="alert alert__danger">Zur Zeit nicht vefügbar.</div>
+    @endif
 
-    <button class="btn btn--primary blankslate__btn">Erstell dein erstes Projekt</button>
+    <button class="btn btn--primary blankslate__btn">{{$data['btn_title']}}</button>
 </div>

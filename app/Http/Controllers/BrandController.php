@@ -22,7 +22,9 @@ class BrandController extends Controller {
 	 */
 	public function index( Brand $brands ) {
 
-		return view( 'backend.pages.dashboard', compact( 'brands' ) );
+		$isEmpty = $this->whenDBisEmpty();
+
+		return view( 'backend.pages.dashboard', compact( 'brands', 'isEmpty' ) );
 
 	}
 
@@ -90,4 +92,18 @@ class BrandController extends Controller {
 	public function destroy( $id ) {
 		//
 	}
+
+	public function whenDBisEmpty() {
+
+		$images       = 'https://company-161686.frontify.com/img/blankslate/project/drop.png';
+		$title        = 'Beginnen wir mit etwas Neuem.';
+		$text         = 'Projekte ermöglichen es dir, Markeninhalte zu diskutieren und zu iterieren, dynamische Prototypen zu erstellen und Workflows anzupassen.';
+		$is_available = 0;
+		$btnTitle     = 'Erstellen deine erste Marke';
+
+		$isEmpty = AdminDashboardController::isEmptyPage( $images, $title, $text, $is_available, $btnTitle );
+
+		return $isEmpty;
+	}
+
 }

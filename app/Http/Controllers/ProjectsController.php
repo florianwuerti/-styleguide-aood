@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 
-class ProjectsController extends Controller {
+class ProjectsController extends AdminDashboardController {
 	/**
 	 * Create a new controller instance.
 	 *

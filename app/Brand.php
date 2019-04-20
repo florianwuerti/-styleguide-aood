@@ -10,4 +10,9 @@ class Brand extends Model {
 		'brand_color'
 	];
 
+	public function guideline()
+	{
+		return $this->hasMany(Guideline::class);
+	}
+
 }
